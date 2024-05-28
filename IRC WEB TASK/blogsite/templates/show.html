@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block title%}{{blog.Blog_Name}}{%endblock title %}
+{%block css%}<link rel="stylesheet" href="\static\show.css" />{%endblock css %}
+{%block body%}
+<h1 id="blogname">{{blog.Blog_Name}}</h1>
+<div class="info">DATE :{{blog.Blog_Date}}</div>
+<div class="info">Author :{{blog.User_Name}}</div>
+<div id="maincont">
+    {% if blog.Blog_Image != '' %}   <img src='/media/{{blog.Blog_Image}}' alt="" id ="bimage"> {% endif %}
+    <div id="desc">{{blog.Blog}}</div>
+
+</div>
+{% if state == 0 %}
+<a href="/Favourite/{{blog.Blog_Id}}"><img src="/static/images/png.png" id="favourite"></a>
+{% endif %}
+{% if state == 1 %}
+<a href="/Favourite/{{blog.Blog_Id}}"><img src="/static/images/heart.png" id="favourite"></a>
+{% endif %}        
+
+{%endblock body%}

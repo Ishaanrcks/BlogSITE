@@ -1,0 +1,84 @@
+
+#maincont
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#maincont h1{
+    font-family: 'Jaro';
+    font-size: 5em;
+    font-weight: lighter;
+    margin: 2vh 0;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+   
+}
+.blogscont
+{
+   width: 40vw;
+    height: 20vh;
+    border: none;
+    box-shadow: 0px 2px 2px rgba(207, 207, 207, 0.745);
+    margin: 3vh 0;
+    font-family: 'Rajdhani';
+    display: flex;
+    cursor: pointer;
+    
+}
+.blogscont img
+{flex: 1;
+width: 20vh;
+height: 20vh;
+}
+.blog{
+    flex:3;
+    height: 20vh;
+font-family: 'Rajdhani';
+padding: 0 1vw ;
+cursor: pointer;
+
+}
+.blogscont:hover{box-shadow: 0px 2px 2px rgba(96, 96, 96, 0.683);}
+.blog strong{
+    display: block;
+margin-top: 1vh 0;
+font-weight: 100;
+font-style: italic;
+}
+.blog h2{
+    height: 8vh;
+    cursor: pointer;
+}
+#paginator
+{
+    list-style:none;
+    display: flex;
+    
+ 
+
+}
+
+.page
+{
+   
+    border: rgba(124, 183, 255, 0.356) 1px ridge;
+   
+    height: 3vh;
+    padding: 1vh 1vh;
+    font-size:1.1em ;
+    margin: 0 0.5vh;
+cursor: pointer;
+font-family: 'Rajdhani';
+font-weight: 500;
+}
+.page:hover
+{
+background-color: rgba(0, 115, 255, 0.708);
+}
+#maincont a{
+    text-decoration-line: none;
+    color: black;
+}

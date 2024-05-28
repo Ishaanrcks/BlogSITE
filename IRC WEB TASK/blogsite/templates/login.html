@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{%block title%}Login{%endblock title %}
+{%block css%}<link rel="stylesheet" href="\static\login.css" />{%endblock css %}
+{%block body%} <div id="info">
+   <strong>BLOGGREAD</strong>
+
+    Welcome to BloggRead, your digital haven where words weave tales, inspire thought, and ignite passions. Embark
+    on a journey where each post unravels new dimensions of knowledge and creativity. From insightful analyses to
+    captivating narratives, BloggRead is your gateway to a world of endless exploration and discovery. Join us as we
+    delve into the boundless realms of literature and beyond.<br>
+    <a href="/SignUp" id="anchor"> <button>SIGNUP</button></a>
+    <a href="#joinhead" id="anchor"> <button>JOIN NOW</button></a>
+    
+
+</div>
+
+<div id="container">
+    <h1 id="joinhead">JOIN US</h1>
+    <div id="subcontainer">
+        <div class="login" id="log1">
+
+        </div>
+        <div class="login" id="log2">
+            <div class="logform">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <h2>Login</h2>
+                    <label for="username">USERNAME:</label><br>
+                    <input type="text" name="username" placeholder="Username" required><br>
+                    <label for="password">PASSWORD:</label><br>
+                    <input type="password" name="password" placeholder="Password" required><br>
+                    <input type="submit" value="Login" id="loginbutton">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% if message == 'FAIL' %}
+<script>
+    alert('Wrong User Credentials!')
+</script>
+{% endif %}
+{%endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="/static/base.css" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>BLOGGREAD</li>
+            <li><a href="#joinhead">NEW BLOGS</a></li>
+            <li><a href="#joinhead">FAVOURITES</a></li>
+            <li><a href="#joinhead">CREATE</a></li>
+            <li><a href="#joinhead">MY BLOGS</a></li>
+            <li><a href="#joinhead"><img src='\static\images\user.png'></a></li>
+
+        </ul>
+    </nav>
+    <div id="info">
+        <strong>BLOGGREAD</strong>
+
+        Welcome to BloggRead, your digital haven where words weave tales, inspire thought, and ignite passions. Embark
+        on a journey where each post unravels new dimensions of knowledge and creativity. From insightful analyses to
+        captivating narratives, BloggRead is your gateway to a world of endless exploration and discovery. Join us as we
+        delve into the boundless realms of literature and beyond.
+        <button>JOIN NOW</button>
+
+    </div>
+
+    <div id="container">
+        <h1 id="joinhead">JOIN US</h1>
+        <div id="subcontainer">
+            <div class="login" id="log1">
+
+            </div>
+            <div class="login" id="log2">
+                <div class="logform">
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h2>Login</h2>
+                        <label for="email">EMAIL:</label><br>
+                        <input type="text" name="email" placeholder="Email" required><br>
+                        <label for="password">PASSWORD:</label><br>
+                        <input type="password" name="password" placeholder="Password" required><br>
+                        <input type="submit" value="Login" id="loginbutton">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html> -->

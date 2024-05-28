@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title%}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="\static\base.css" />
+{% block css %}{% endblock css%}
+
+</head>
+
+<body><main>
+    <nav>
+        <ul>
+            <li>BLOGGREAD</li>
+            <li><a href="{% url 'NewBlogs' %}">NEW BLOGS</a></li>
+            <li><a href="/YourFavourite">FAVOURITES</a></li>
+            <li><a href="/Create/{{'New'}}">CREATE</a></li>
+            <li><a href="{% url 'MyBlogs' %}">MY BLOGS</a></li>
+            <li><a onclick="alert('{{UserStatus}}');" href="{% url 'LogOut' %}" ><img src='/static/images/user.png'></a></li>
+
+        </ul>
+    </nav>
+    {% block body %}{% endblock body%}
+</main>
+    <footer>Made By Ishan, Vanshika, Sushant, Abhinav</footer>
+</body>
+</html>

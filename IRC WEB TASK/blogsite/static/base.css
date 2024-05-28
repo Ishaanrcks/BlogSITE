@@ -1,0 +1,81 @@
+html
+{
+    scroll-behavior: smooth !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+  
+}
+/* 
+body {
+    min-height: 100vh;
+    
+
+    background-repeat: no-repeat;
+
+    background-size: 100vw;
+} */
+
+nav {
+    background-color: rgba(79, 79, 79, 0.544);
+    box-shadow: 3px 3px 5px rgb(79, 79, 79, 0.4);
+    height: 10vh;
+    margin: auto;
+    align-content: center;
+    position: sticky;
+    top: 0;
+    font-family: "Jaro", sans-serif;
+}
+
+nav ul {
+
+    list-style: none;
+    width: 100%;
+    font-size: x-large;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+nav li {
+    height: 100%;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 8vh;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    /* Font COLOR */
+}
+
+nav li:first-child {
+    margin-right: auto;
+    padding: 0 8vh;
+    color: white;
+    font-size: 8vh;
+    font-weight: 100;
+}
+
+nav a:hover {
+    background-color: rgba(79, 79, 79, 0.675);
+}
+main
+{
+    min-height: 92vh;
+}
+footer {
+    margin-top: 4vh;
+    font-family: "Jaro", sans-serif;
+    height: 4vh;
+    background-color: rgba(234, 234, 234, 0.6);
+    box-shadow: 0 -3px 5px rgba(232, 232, 232, 0.544);
+    font-family: 'Rajdhani';
+    
+    
+}

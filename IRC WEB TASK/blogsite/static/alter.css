@@ -1,0 +1,116 @@
+html
+{
+    scroll-behavior: smooth !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+  
+}
+body {
+    min-height: 100vh;
+} 
+#container
+{
+    font-family: "Rajdhani", sans-serif;
+}
+#alterhead
+{font-family: "Jaro", sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 3vh auto;
+    width:50vw;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+
+   font-weight: lighter ;
+}
+#subcontainer {
+    display: flex;
+    height: 80vh;
+    width: 95%;
+    margin: auto;
+    box-shadow: 2px 2px 2px rgba(173, 173, 173, 0.821);
+}
+#log1 {
+    flex: 2;
+    background-color: rgba(245, 245, 245, 0.601);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#log2 {
+    flex: 1;
+    
+    background-image: url("images/create.jpg");
+    background-size: cover;
+    margin: 1vh 1vw;
+}
+form {
+   padding: 2vh 1vw;
+}
+form *
+{
+   margin-bottom:3vh ;
+}
+.input
+{
+    margin: 2vh 0;
+
+border: none;
+
+box-shadow: 2px 2px 2px rgba(213, 213, 213, 0.821);
+   
+}
+
+form label
+{
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    font-size: 1.25rem;
+}
+#bname
+{
+    height: 3vh;
+    width:20vw;
+    font-size: large;
+    
+}
+form textarea
+{
+    height: 30vh;
+    width:50vw; 
+    resize: none;
+    scrollbar-width:thin;
+    font-size: x-large;
+}
+.submitbutton {
+    font-size: small;
+    display: inline;
+    width: 5vw;
+    height: 4vh;
+    border: 1px ridge rgba(18, 78, 182, 0.625);
+    border-radius: 2vh;
+    background-color: rgb(14, 53, 120);
+    box-shadow: 3px 3px 5px rgb(14, 53, 120, 0.4);
+    color: white;
+    font-weight: 600;
+}
+
+.submitbutton:focus {
+    font-size: small;
+    width: 5vw;
+    height: 4vh;
+    border: none;
+    background-color: rgb(200, 200, 200);
+    box-shadow: 3px 3px 5px rgb(200, 200, 200, 0.4);
+    color: white;
+    font-weight: 600;
+}
+.submitbutton a{
+    text-decoration:none ;
+    color: white;
+}

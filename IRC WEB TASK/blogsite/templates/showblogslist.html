@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%block title%}{{heading}} Blogs{%endblock title %}
+{%block css%}<link rel="stylesheet" href="\static\showblogs.css" >{%endblock css %}
+{%block body%}
+<div id="maincont">
+    <h1>{{heading}} Blogs</h1>
+    
+    {% for i in page.object_list %}
+    
+    <a href="/{{mode}}/{{i.Blog_Id}}">
+       
+        <div class="blogscont"> {% if i.Blog_Image != '' %}<img src="/media/{{i.Blog_Image}}">{% endif %}
+    <div class="blog"><h2>{{i.Blog_Name}}</h2> <br>
+        <strong name="yash">
+            DATE:&nbsp&nbsp{{i.Blog_Date}}
+        </strong><br>
+        <strong>
+            Author:&nbsp&nbsp{{i.User_Name}}
+        </strong>
+        
+    </div> </div></a>
+      {% endfor %}
+    <ul id="paginator">
+        {% if page.has_previous %}
+        <a href="?page={{page.previous_page_number}}"><li class="page">Previous</li></a>
+       <a href="?page=1"><li class="page">First</li></a>
+       {% endif %}
+        {% if total_page != 1 %}
+        {% for i in lst %}
+        <a href="?page={{i}}"><li class="page">{{i}}</li></a>
+        {% endfor %}
+        {% endif %}
+        {% if page.has_next %}
+        <a href="?page={{total_page}}"><li class="page">Last</li></a>
+        <a href="?page={{page.next_page_number}}"><li class="page">Next</li></a>
+        {% endif %}
+     </ul>
+    
+ 
+ 
+</div>  
+
+{%endblock body%}

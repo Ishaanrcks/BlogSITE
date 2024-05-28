@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{%block title%}{{mode}}{%endblock title %}
+{%block css%}<link rel="stylesheet" href="\static\alter.css" >{%endblock css %}
+{%block body%}
+<div id="container">
+    <h1 id="alterhead">{{mode}} YOUR NEW BLOG</h1>
+    <div id="subcontainer">
+       
+        <div class="login" id="log1">
+            <div class="logform">
+                {% if mode == 'CREATE' %}
+                <form method="POST" action="{% url 'change' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h2 i>DATE: {{date}}</h2>
+                    <label for="bname">NAME OF BLOG:</label><br>
+                    <input type="text" name="NAME" placeholder="WRITE THE NAME OF YOUR BLOG" id='bname'required class='input'><br>
+                    <label for="bdesc">DESCRIBE YOUR BLOG:</label><br>
+                    <textarea name="DESCRIPTION" placeholder="WRITE YOUR BLOG" id='bdesc' required class='input'></textarea><br>
+                    <label for="bimg">IMAGE FOR YOUR BLOG:</label><br>
+                    <input type="file" name="IMAGE" accept="image/*"  id='bimg' ><br>
+                    <input type="submit" value="SUBMIT" class="submitbutton" >
+                {% endif %}
+
+
+                </form>
+
+                {% if mode == 'UPDATE' %}
+                <form method="POST" action="/Update/{{data.Blog_Id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <h2 i>DATE: {{date}}</h2>
+                    <label for="bname">NAME OF BLOG:</label><br>
+                    <input type="text" name="NAME" value={{data.Blog_Name}} id='bname'required class='input'><br>
+                    <label for="bdesc">DESCRIBE YOUR BLOG:</label><br>
+                    <textarea name="DESCRIPTION"  id='bdesc' required class='input'>{{data.Blog}}</textarea><br>
+                    <label for="bimg">IMAGE FOR YOUR BLOG:</label><br>
+                    <input type="file" name="IMAGE" accept="image/*"  id='bimg' ><br>
+                    
+                    <input type="submit" value="UPDATE" class="submitbutton" >
+                    <button class="submitbutton" ><a href="/Delete/{{data.Blog_Id}}" onclick='alert("Blog Deleted Successfully")'>DELETE</a></button>
+                    {% endif %}
+
+                </form>
+                
+            </div>
+        </div>
+            <div class="login" id="log2">
+
+            
+        </div>
+    </div>
+</div>
+
+{%endblock body%}

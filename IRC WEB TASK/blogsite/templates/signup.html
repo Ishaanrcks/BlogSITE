@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{%block title%}SignUp{%endblock title %}
+{%block css%}<link rel="stylesheet" href="\static\Sign_Up.css" >{%endblock css %}
+{%block body%}
+    
+
+
+<div id="maincont">
+    <form method="POST" action="/DoSignUp">
+       {% csrf_token %}
+        <h2 id="heading">SignUp</h2>
+        <label for="username">USERNAME:</label><br>
+        <input type="text" name="username" placeholder="Username" required  value= {{username}}><br>
+        <label for="firstname">FIRST NAME:</label><br>
+        <input type="text" name="firstname" placeholder="Firstname" required  value= {{firstname}}><br>
+        <label for="password">PASSWORD:</label><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <label for="confirm password">CONFIRM PASSWORD:</label><br>
+        <input type="password" name="confirm password" placeholder="Confirm Password" required><br>
+        <label for="email">EMAIL:</label><br>
+        <input type="email" name="email" placeholder="Email-Id" required value={{email}}><br>
+        <input type="submit" value="SignUp" id="loginbutton">
+</div>
+{% if mode != '' %}
+<script>
+  if('{{mode}}'=='Fail'){
+    alert("Username Already Exists.");}
+  if('{{mode}}'=='Fail0'){
+    alert("Password should be Alphanum.");}
+    if('{{mode}}'=='Fail1'){
+      alert("Password is less than 8 character.");}
+      if('{{mode}}'=='Fail2'){
+        alert("Password and Confirm Password did'nt match");}
+</script>
+  {% endif %}
+
+{%endblock body%}
